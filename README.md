@@ -12,63 +12,29 @@
 _Create a GitHub Action and use it in a workflow._
 
 </header>
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
 
-## Step 1: Create a workflow file
-
-_Welcome to "Hello GitHub Actions"! :wave:_
-
-**What is _GitHub Actions_?**: GitHub Actions is a flexible way to automate nearly every aspect of your team's software workflow. You can automate testing, continuously deploy, review code, manage issues and pull requests, and much more. The best part, these workflows are stored as code in your repository and easily shared and reused across teams. To learn more, check out these resources:
-
-- The GitHub Actions feature page, see [GitHub Actions](https://github.com/features/actions).
-- The "GitHub Actions" user documentation, see [GitHub Actions](https://docs.github.com/actions).
-
-**What is a _workflow_?**: A workflow is a configurable automated process that will run one or more jobs. Workflows are defined in special files in the `.github/workflows` directory and they execute based on your chosen event. For this exercise, we'll use a `pull_request` event.
-
-- To read more about workflows, jobs, and events, see "[Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)".
-- If you want to learn more about the `pull_request` event before using it, see "[pull_request](https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request)".
-
-To get you started, we used actions to go ahead and made a branch and pull request for you.
-
-### :keyboard: Activity: Create a workflow file
-
-1. Open a new browser tab, and navigate to this same repository. Then, work on the steps in your second tab while you read the instructions in this tab.
-1. Create a pull request to view all the changes you'll make throughout this course. Click the **Pull Requests** tab, click **New pull request**, set `base: main` and `compare:welcome-workflow`, click **Create pull request**.
-1. Navigate to the **Code** tab.
-1. From the **main** branch dropdown, click on the **welcome-workflow** branch.
-1. Navigate to the `.github/workflows/` folder, then select **Add file** and click on **Create new file**.
-1. In the **Name your file...** field, enter `welcome.yml`.
-1. Add the following content to the `welcome.yml` file:
-   ```yaml
-   name: Post welcome comment
-   on:
-     pull_request:
-       types: [opened]
-   permissions:
-     pull-requests: write
-   ```
-1. To commit your changes, click **Commit new file**.
-  <<< Author notes: Step 4 >>>
+<!--
+  <<< Author notes: Step 5 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
+-->
 
-## Step 4: Merge your workflow file
+## Step 5: Trigger the workflow
 
-_You're now able to write and run an Actions workflow! :sparkles:_
+_You've now got a fully functioning workflow! :smile:_
 
-Merge your changes so the action will be a part of the `main` branch.
+Your new action will run any time a pull request has been opened.
 
-### :keyboard: Activity: Merge your workflow file
+**Seeing your _action_ in action**: The status of your action is shown in a pull request before you merge, look for **All checks have passed** when you try out the steps below. You can also view them from the **Actions** tab in your repository. From there, you will see all the actions that have run, and you can click on each action to view details and access log files.
 
-1. In your repo, click on the **Pull requests** tab.
-1. Click on the pull request you created in step 1.
-1. Click **Merge pull request**, then click **Confirm merge**.
-1. Optionally, click **Delete branch** to delete your `welcome-workflow` branch.
+![View an action's log](https://user-images.githubusercontent.com/16547949/62388049-4e64e600-b52a-11e9-8bf5-db0c5452360f.png)
+
+### :keyboard: Activity: Trigger the workflow
+
+1. Make a new branch named `test-workflow`.
+1. Commit any change to your branch, such as adding an emoji to your README.md file.
+1. Create the pull request on your branch.
+1. See your action run on your pull request.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
 <footer>
